@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAJA CRUDA · Metepec | Miches, Tacos y House 🦐🍋🪩</title>
+    <meta name="description" content="Somos el spot perfecto para echar Miche, comer unos buenos tacos estilo baja, socializar y sobre todo disfrutar buena música en Metepec.">
+
+    <!-- Tipografías Geométricas & Editoriales (Archivo Black, Space Grotesk, Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configuración de Paleta Real Extraída de @bajacruda -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bosque: {
+                            950: '#091C0E',
+                            900: '#0E2B16',
+                            800: '#133B1F',
+                            700: '#1B522B',
+                            600: '#246B39',
+                        },
+                        lima: {
+                            400: '#6EE77A',
+                            500: '#49D658',
+                            600: '#38B000',
+                        },
+                        papel: {
+                            100: '#FFFFFF',
+                            200: '#F4F1EA',
+                            300: '#E6E1D5',
+                        },
+                        chamoy: {
+                            500: '#C91F28',
+                            600: '#A3161E',
+                        },
+                        cobalto: {
+                            500: '#1B4FD8',
+                            600: '#143CA6',
+                        },
+                        pastel: {
+                            300: '#F7CBE0',
+                            400: '#F3B6D4',
+                            500: '#E594BD',
+                        },
+                        carbon: {
+                            900: '#111111',
+                            800: '#1D1D1D',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['"Archivo Black"', 'sans-serif'],
+                        grotesk: ['"Space Grotesk"', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'flyer': '6px 6px 0px 0px #111111',
+                        'flyer-lima': '6px 6px 0px 0px #49D658',
+                        'flyer-chamoy': '6px 6px 0px 0px #C91F28',
+                        'flyer-white': '6px 6px 0px 0px #FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Scrollbar Verde Bosque & Lima */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0E2B16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #49D658;
+            border-radius: 9999px;
+        }
+
+        /* Patrón Monograma "BAJA" estilo papel encerado de canasta y fondos de IG */
+        .bg-monograma-bosque {
+            background-color: #133B1F;
+            background-image: url("data:image/svg+xml,%3Csvg width='160' height='72' viewBox='0 0 160 72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231B522B' fill-opacity='0.55'%3E%3Ctext x='6' y='28' font-family='Arial Black, sans-serif' font-weight='900' font-size='26' letter-spacing='-1'%3EBAJA%3C/text%3E%3Ctext x='86' y='28' font-family='Arial Black, sans-serif' font-weight='900' font-size='26' letter-spacing='-1'%3EBAJA%3C/text%3E%3Ctext x='-34' y='62' font-family='Arial Black, sans-serif' font-weight='900' font-size='26' letter-spacing='-1'%3EBAJA%3C/text%3E%3Ctext x='46' y='62' font-family='Arial Black, sans-serif' font-weight='900' font-size='26' letter-spacing='-1'%3EBAJA%3C/text%3E%3Ctext x='126' y='62' font-family='Arial Black, sans-serif' font-weight='900' font-size='26' letter-spacing='-1'%3EBAJA%3C/text%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .bg-monograma-papel {
+            background-color: #F4F1EA;
+            background-image: url("data:image/svg+xml,%3Csvg width='160' height='72' viewBox='0 0 160 72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23133B1F' fill-opacity='0.06'%3E%3Ctext x='6' y='28' font-family='Arial Black, sans-serif' font-weight='900' font-size='26' letter-spacing='-1'%3EBAJA%3C/text%3E%3Ctext x='86' y='28' font-family='Arial Black, sans-serif' font-weight='900' font-size='26' letter-spacing='-1'%3EBAJA%3C/text%3E%3Ctext x='-34' y='62' font-family='Arial Black, sans-serif' font-weight='900' font-size='26' letter-spacing='-1'%3EBAJA%3C/text%3E%3Ctext x='46' y='62' font-family='Arial Black, sans-serif' font-weight='900' font-size='26' letter-spacing='-1'%3EBAJA%3C/text%3E%3Ctext x='126' y='62' font-family='Arial Black, sans-serif' font-weight='900' font-size='26' letter-spacing='-1'%3EBAJA%3C/text%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Cinta Marquee continua */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 26s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Flotación suave mascota rubber-hose */
+        @keyframes mascotBounce {
+            0%, 100% { transform: translateY(0px) rotate(-2deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+        .mascot-float {
+            animation: mascotBounce 3.8s ease-in-out infinite;
+        }
+
+        /* Giro lento disco de vinilo */
+        @keyframes spinVinyl {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .vinyl-spin {
+            animation: spinVinyl 14s linear infinite;
+        }
+    </style>
+
+
+
+</head>
+<body class="bg-bosque-800 text-papel-100 font-sans antialiased selection:bg-lima-500 selection:text-carbon-900 overflow-x-hidden">
+
+    <div id="toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none flex flex-col gap-2 items-center w-full max-w-sm px-4"></div>
+
+    <header class="fixed top-0 inset-x-0 z-40 bg-bosque-900/95 backdrop-blur-md border-b border-white/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <a href="#" class="flex items-center gap-3 group" aria-label="Baja Cruda Metepec Inicio">
+                    <div class="px-3 py-1.5 rounded-xl bg-bosque-800 border border-white/20 group-hover:border-lima-500 transition-colors">
+                        <svg viewBox="0 0 210 66" class="w-32 sm:w-36 h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6H36C44 6 49 10 49 16.5C49 21 46 24 41.5 25.2C47 26.5 50.5 30 50.5 35.5C50.5 42.5 44.5 47 35.5 47H4V6ZM19 20.5H31.5C34.2 20.5 35.8 19.2 35.8 17.2C35.8 15.2 34.2 14 31.5 14H19V20.5ZM19 38.5H32.5C35.5 38.5 37.2 37.1 37.2 34.8C37.2 32.5 35.5 31.2 32.5 31.2H19V38.5Z" fill="#FFFFFF"/>
+                            <path d="M55 24C56.5 16.5 64 13 76.5 13C90 13 97.5 18 97.5 28V47H83.5V43C80.5 46 75.5 47.8 69 47.8C59.5 47.8 53.5 43 53.5 36.2C53.5 29 60 25.8 72.5 25.2L83 24.7V23.8C83 21.2 80.8 19.8 76.5 19.8C72.5 19.8 70.2 21.2 69.5 24H55ZM83 31.8L74.5 32.3C70.2 32.6 68 33.8 68 36C68 38.2 70.2 39.5 74 39.5C79.5 39.5 83 36.8 83 32.5V31.8Z" fill="#FFFFFF"/>
+                            <circle cx="111.5" cy="7.5" r="6.5" fill="#FFFFFF"/>
+                            <path d="M104.5 16H118.5V42.5C118.5 51.5 113 56 102.5 56C98.5 56 95.5 55.4 93 54.5V45.5C95 46.1 97 46.4 99 46.4C103 46.4 104.5 44.5 104.5 40.5V16Z" fill="#FFFFFF"/>
+                            <path d="M124.5 24C126 16.5 133.5 13 146 13C159.5 13 167 18 167 28V47H153V43C150 46 145 47.8 138.5 47.8C129 47.8 123 43 123 36.2C123 29 129.5 25.8 142 25.2L152.5 24.7V23.8C152.5 21.2 150.3 19.8 146 19.8C142 19.8 139.7 21.2 139 24H124.5ZM152.5 31.8L144 32.3C139.7 32.6 137.5 33.8 137.5 36C137.5 38.2 139.7 39.5 143.5 39.5C149 39.5 152.5 36.8 152.5 32.5V31.8Z" fill="#FFFFFF"/>
+                            <text x="6" y="62" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11.5" letter-spacing="23.5">CRUDA</text>
+                        </svg>
+                    </div>
+                    <div class="hidden xl:block">
+                        <span class="block text-[11px] font-bold uppercase tracking-widest text-lima-500">Metepec 📍</span>
+                        <span class="block text-xs text-papel-200/80 font-medium">Miches, Tacos y House</span>
+                    </div>
+                </a>
+
+                <!-- Links de navegación -->
+                <nav class="hidden lg:flex items-center gap-7 text-xs font-bold uppercase tracking-widest">
+                    <a href="#nosotros" class="text-papel-100/85 hover:text-lima-500 transition-colors">Nosotros</a>
+                    <a href="#arma-tu-miche" class="text-papel-100/85 hover:text-lima-500 transition-colors flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-lima-500 animate-pulse"></span>
+                        Arma tu Miche
+                    </a>
+                    <a href="#menu" class="text-papel-100/85 hover:text-lima-500 transition-colors">Menú Baja</a>
+                    <a href="#sessions" class="text-papel-100/85 hover:text-pastel-400 transition-colors">House &amp; Sessions</a>
+                    <a href="#ubicacion" class="text-papel-100/85 hover:text-lima-500 transition-colors">Ubicación</a>
+                </nav>
+
+
+                <!-- Botones CTA: Carrito / Pedido WhatsApp -->
+                <div class="flex items-center gap-2.5">
+                    <a href="#arma-tu-miche" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-lima-500 hover:bg-lima-400 text-carbon-900 font-display text-xs uppercase tracking-wider border-2 border-carbon-900 shadow-flyer transition-all active:translate-y-0.5">
+                        <span>🍋 Miche a tu Manera</span>
+                    </a>
+
+                    <a href="#ubicacion" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-papel-100 hover:bg-papel-200 text-carbon-900 font-display text-xs sm:text-sm uppercase tracking-wider border-2 border-carbon-900 shadow-flyer-lima transition-all active:translate-y-0.5">
+                        <span>📍 Cómo llegar</span>
+                    </a>
+
+                    <!-- Botón Menú Móvil -->
+                    <button onclick="toggleMobileNav()" aria-label="Abrir navegación" class="lg:hidden p-2.5 rounded-xl bg-bosque-800 border border-white/20 text-white">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- menu Móvil -->
+        <div id="mobile-nav" class="hidden lg:hidden bg-bosque-900 border-b border-white/15 px-4 pt-3 pb-6 space-y-2">
+            <a href="#nosotros" onclick="toggleMobileNav()" class="block py-3 px-4 rounded-xl bg-bosque-800 font-bold uppercase text-xs tracking-wider text-white">¿Quiénes Somos?</a>
+            <a href="#arma-tu-miche" onclick="toggleMobileNav()" class="block py-3 px-4 rounded-xl bg-lima-500 font-display uppercase text-xs tracking-wider text-carbon-900">🍋 Arma tu Miche desde Cero</a>
+            <a href="#menu" onclick="toggleMobileNav()" class="block py-3 px-4 rounded-xl bg-bosque-800 font-bold uppercase text-xs tracking-wider text-white">🌮 Menú: De la Miche al Taco</a>
+            <a href="#sessions" onclick="toggleMobileNav()" class="block py-3 px-4 rounded-xl bg-bosque-800 font-bold uppercase text-xs tracking-wider text-pastel-400">🪩 House &amp; Vinyl Sessions</a>
+            <a href="#ubicacion" onclick="toggleMobileNav()" class="block py-3 px-4 rounded-xl bg-bosque-800 font-bold uppercase text-xs tracking-wider text-white">📍 Ubicación en Metepec</a>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         2. HERO SECTION EDITORIAL EN VERDE BOSQUE + MONOGRAMA + MASCOTA
+    ====================================================================== -->
+    <section class="relative pt-28 pb-16 lg:pt-36 lg:pb-24 bg-monograma-bosque overflow-hidden border-b-4 border-carbon-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Columna Izquierda: Bio Oficial, Titular Editorial & CTAs -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Píldora Bio Oficial Instagram -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-bosque-950/90 border border-lima-500/60 text-papel-100 text-xs font-extrabold uppercase tracking-widest">
+                        <span>MICHES, TACOS Y HOUSE 🦐🍋🪩</span>
+                        <span class="text-lima-500">·</span>
+                        <span class="text-lima-400">METEPEC 📍</span>
+                    </div>
+
+                    <!-- Titular Principal Estilo Flyer Gráfico -->
+                    <h1 class="font-display text-4xl sm:text-6xl lg:text-[66px] text-papel-100 uppercase leading-[0.96] tracking-tight">
+                        DEJA DE CHAMBEAR Y <span class="text-lima-500">VENTE A BAJA.</span>
+                    </h1>
+
+                    <!-- Esencia real de sus publicaciones -->
+                    <p class="text-base sm:text-lg text-papel-200/90 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                        Somos el spot perfecto en Metepec para echar <strong>Miche armada desde cero</strong>, comer unos buenos <strong>tacos estilo Baja</strong> con sazón de Ensenada, socializar y disfrutar <strong>música House</strong> en vivo.
+                    </p>
+
+                    <!-- Botones de Acción Directa -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#arma-tu-miche" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-lima-500 hover:bg-lima-400 text-carbon-900 font-display text-base uppercase tracking-wider border-2 border-carbon-900 shadow-flyer transition-all flex items-center justify-center gap-2">
+                            <span>Armar mi Miche</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 stroke-[2.5]"></i>
+                        </a>
+                        <a href="#menu" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-papel-100 hover:bg-papel-200 text-carbon-900 font-display text-base uppercase tracking-wider border-2 border-carbon-900 shadow-flyer-chamoy transition-all flex items-center justify-center gap-2">
+                            <span>Ver Menú Baja</span>
+                            <i data-lucide="utensils" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Highlights reales de su perfil de IG -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
+                        <a href="#ubicacion" class="flex items-center gap-2.5 group">
+                            <span class="w-11 h-11 rounded-full bg-bosque-900 border-2 border-papel-200/50 group-hover:border-lima-500 flex items-center justify-center text-sm transition-colors">🕒</span>
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-papel-200 group-hover:text-lima-500">Horarios</span>
+                        </a>
+                        <a href="#nosotros" class="flex items-center gap-2.5 group">
+                            <span class="w-11 h-11 rounded-full bg-bosque-900 border-2 border-papel-200/50 group-hover:border-lima-500 flex items-center justify-center text-sm transition-colors">🪩</span>
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-papel-200 group-hover:text-lima-500">Nosotros</span>
+                        </a>
+                        <a href="#menu" class="flex items-center gap-2.5 group">
+                            <span class="w-11 h-11 rounded-full bg-bosque-900 border-2 border-papel-200/50 group-hover:border-lima-500 flex items-center justify-center text-sm transition-colors">🌮</span>
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-papel-200 group-hover:text-lima-500">Menú</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Tarjeta Estilo Post de Instagram + Mascota Caricatura Verde Rubber-Hose -->
+                <div class="lg:col-span-5 relative flex items-center justify-center">
+                    <div class="relative w-full max-w-md bg-papel-200 text-carbon-900 rounded-3xl border-4 border-carbon-900 shadow-flyer-lima p-6 sm:p-7">
+                        
+                        <!-- Cabecera estilo publicación @bajacruda -->
+                        <div class="flex items-center justify-between pb-3 mb-4 border-b-2 border-carbon-900/15">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-9 h-9 rounded-full bg-bosque-800 flex items-center justify-center text-white font-display text-[10px] tracking-tighter border border-carbon-900">
+                                    BAJA
+                                </div>
+                                <div>
+                                    <p class="text-xs font-extrabold text-carbon-900 leading-none">bajacruda</p>
+                                    <p class="text-[10px] font-semibold text-bosque-700 mt-0.5">Metepec · Audio original</p>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-bosque-800 text-lima-500 font-display text-[10px] uppercase tracking-wider">
+                                @bajacruda
+                            </span>
+                        </div>
+
+                        <!-- Cartel Central Estilo Servilleta / Hoja con Frase Viral de IG + Mascota Verde -->
+                        <div class="relative bg-bosque-900 rounded-2xl p-6 border-2 border-carbon-900 overflow-hidden">
+                            <!-- Patrón sutil -->
+                            <div class="bg-monograma-bosque absolute inset-0 opacity-50"></div>
+
+                            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-4">
+                                <!-- Cartelito blanco tipo libreta / servilleta de su feed -->
+                                <div class="bg-papel-100 text-carbon-900 p-4 rounded-xl border-2 border-carbon-900 shadow-flyer transform -rotate-2 flex-1 text-center">
+                                    <p class="font-grotesk font-bold text-xl sm:text-2xl uppercase leading-tight tracking-tight text-carbon-900">
+                                        DEJA DE<br>CHAMBEAR<br>Y VENTE<br>A BAJA
+                                    </p>
+                                    <div class="mt-2 pt-2 border-t border-carbon-900/20 text-[10px] font-extrabold uppercase tracking-widest text-bosque-800">
+                                        MICHES · TACOS · HOUSE
+                                    </div>
+                                </div>
+
+                                <!-- Mascota Caricatura Verde Estilo Rubber-Hose / Retro sonriendo con Miche -->
+                                <div class="mascot-float w-36 h-40 shrink-0 flex items-center justify-center">
+                                    <svg viewBox="0 0 180 200" class="w-full h-full drop-shadow-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Piernas rubber-hose negras -->
+                                        <path d="M74 148C72 165 68 176 66 184" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+                                        <path d="M106 148C108 165 112 176 114 184" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+                                        <!-- Tenis retro blancos -->
+                                        <ellipse cx="60" cy="186" rx="14" ry="7" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"/>
+                                        <ellipse cx="120" cy="186" rx="14" ry="7" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"/>
+
+                                        <!-- Cuerpo / Cabeza de Gajo de Limón Verde Neón (#49D658) -->
+                                        <path d="M90 26C124 26 144 56 144 92C144 128 124 152 90 152C56 152 36 128 36 92C36 56 56 26 90 26Z" fill="#49D658" stroke="#111111" stroke-width="5"/>
+                                        <!-- Textura sutil de limón -->
+                                        <circle cx="54" cy="64" r="2" fill="#133B1F"/>
+                                        <circle cx="126" cy="66" r="2" fill="#133B1F"/>
+                                        <circle cx="52" cy="116" r="2" fill="#133B1F"/>
+
+                                        <!-- Gorra / Paliacate Verde Bosque estilo DJ/Street -->
+                                        <path d="M52 44C62 24 118 24 128 44H52Z" fill="#133B1F" stroke="#111111" stroke-width="4"/>
+                                        <path d="M116 40L146 37L142 46H116V40Z" fill="#133B1F" stroke="#111111" stroke-width="3.5"/>
+
+                                        <!-- Ojos grandes estilo caricatura retro años 30 -->
+                                        <ellipse cx="75" cy="76" rx="11" ry="15" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"/>
+                                        <ellipse cx="103" cy="76" rx="11" ry="15" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"/>
+                                        <!-- Pupilas pie-cut -->
+                                        <circle cx="78" cy="76" r="5" fill="#111111"/>
+                                        <circle cx="106" cy="76" r="5" fill="#111111"/>
+
+                                        <!-- Gran sonrisa rubber-hose con dientes -->
+                                        <path d="M58 102C68 126 112 126 122 102C102 108 78 108 58 102Z" fill="#FFFFFF" stroke="#111111" stroke-width="4" stroke-linejoin="round"/>
+                                        <line x1="74" y1="106" x2="74" y2="118" stroke="#111111" stroke-width="2.5"/>
+                                        <line x1="90" y1="107" x2="90" y2="120" stroke="#111111" stroke-width="2.5"/>
+                                        <line x1="106" y1="106" x2="106" y2="118" stroke="#111111" stroke-width="2.5"/>
+
+                                        <!-- Brazo derecho saludando con guante blanco -->
+                                        <path d="M142 96C156 90 164 78 162 66" stroke="#111111" stroke-width="5.5" stroke-linecap="round"/>
+                                        <circle cx="162" cy="62" r="9" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"/>
+
+                                        <!-- Brazo izquierdo sosteniendo Miche escarchada con Chamoy -->
+                                        <path d="M38 98C24 102 18 110 22 118" stroke="#111111" stroke-width="5.5" stroke-linecap="round"/>
+                                        <!-- Vaso de Miche -->
+                                        <path d="M10 92H34L30 132H14L10 92Z" fill="#C91F28" stroke="#111111" stroke-width="3.5"/>
+                                        <!-- Escarchado espeso -->
+                                        <path d="M8 92H36V99C32 102 28 97 22 102C16 107 12 98 8 100V92Z" fill="#7F1D1D" stroke="#111111" stroke-width="2"/>
+                                        <!-- Banderilla de tamarindo -->
+                                        <line x1="6" y1="84" x2="36" y2="94" stroke="#854D0E" stroke-width="4" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pie de foto real -->
+                        <div class="mt-4 flex items-center justify-between text-xs">
+                            <p class="font-bold text-carbon-900">¿YA NOS CONOCES? 🍋🦐</p>
+                            <span class="font-extrabold text-bosque-800">#miches #tacosbaja</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         CINTILLO MARQUEE CON FRASES REALES DE BAJA CRUDA
+    ====================================================================== -->
+    <div class="bg-lima-500 text-carbon-900 py-3.5 border-b-4 border-carbon-900 overflow-hidden">
+        <div class="animate-marquee flex items-center gap-8 font-display text-sm sm:text-base uppercase tracking-wider">
+            <span>DEJA DE CHAMBEAR Y VENTE A BAJA</span>
+            <span>🦐</span>
+            <span>UNA MICHE SANA CORAZONES ROTOS</span>
+            <span>🍋</span>
+            <span>VIERNES 3X2 EN MORITAS</span>
+            <span>🪩</span>
+            <span>DE LA MICHE AL TACO</span>
+            <span>🔥</span>
+            <!-- Repetición -->
+            <span>DEJA DE CHAMBEAR Y VENTE A BAJA</span>
+            <span>🦐</span>
+            <span>UNA MICHE SANA CORAZONES ROTOS</span>
+            <span>🍋</span>
+            <span>VIERNES 3X2 EN MORITAS</span>
+            <span>🪩</span>
+            <span>DE LA MICHE AL TACO</span>
+            <span>🔥</span>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         3. SECCIÓN "¿QUIÉNES SOMOS?" 
+    ====================================================================== -->
+    <section id="nosotros" class="py-20 bg-monograma-papel text-carbon-900 border-b-4 border-carbon-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Encabezado Editorial -->
+            <div class="max-w-3xl mb-12">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-bosque-800 text-lima-500 font-display text-xs uppercase tracking-widest mb-3">
+                     01 / 04 · El Concepto
+                </span>
+                <h2 class="font-display text-4xl sm:text-6xl text-carbon-900 uppercase leading-none">
+                    ¿QUIÉNES <span class="text-bosque-800 underline decoration-lima-500 decoration-4 underline-offset-8">SOMOS?</span>
+                </h2>
+                <p class="text-base sm:text-xl font-semibold text-carbon-800 mt-4 leading-relaxed">
+                    “Somos el spot perfecto para echar Miche, comer unos buenos tacos estilo baja, socializar y sobre todo disfrutar buena música.”
+                </p>
+            </div>
+
+            <!-- Grid de 4 Tarjetas inspiradas en las diapositivas reales de su perfil -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Slide 1: Bandeja metálica & Taco Baja -->
+                <article class="bg-bosque-800 text-papel-100 rounded-3xl border-3 border-carbon-900 shadow-flyer p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-bold text-lima-500 mb-4">
+                            <span>01 · TACOS BAJA</span>
+                            <span>🦐</span>
+                        </div>
+                        <h3 class="font-display text-2xl uppercase leading-tight">
+                            DE LA MICHE AL TACO
+                        </h3>
+                        <p class="text-sm text-papel-200/85 mt-3 leading-relaxed">
+                            Tacos de camarón y pescado capeado al momento, servidos en bandeja metálica con col morada, pico de gallo y nuestro aderezo especial con todo el sazón de Ensenada, Baja California.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-white/15 flex items-center justify-between text-[11px] font-bold uppercase text-lima-400">
+                        <span>Estilo Ensenada</span>
+                        <span>→ Ver en menú</span>
+                    </div>
+                </article>
+
+                <!-- Slide 2: Bandeja de plata sobre terciopelo verde ("Una miche sana corazones rotos") -->
+                <article class="bg-bosque-900 text-papel-100 rounded-3xl border-3 border-carbon-900 shadow-flyer-chamoy p-6 flex flex-col justify-between relative overflow-hidden">
+                    <div class="flex items-center justify-between text-xs font-bold text-chamoy-500 mb-4">
+                        <span>02 · FILOSOFÍA BAJA</span>
+                        <span>❤️‍🩹</span>
+                    </div>
+                    <!-- Tarjetita blanca estilo post de bandeja plateada -->
+                    <div class="my-2 bg-papel-100 text-carbon-900 p-5 rounded-2xl border-2 border-carbon-900 text-center shadow-md">
+                        <span class="block text-[9px] font-extrabold uppercase tracking-widest text-bosque-700 mb-1">@bajacruda</span>
+                        <p class="font-grotesk font-bold text-lg leading-snug text-carbon-900">
+                            “Una miche sana corazones rotos.”
+                        </p>
+                    </div>
+                    <p class="text-xs text-papel-200/80 mt-4 leading-relaxed">
+                        Escarchados con skwinkle, picafresa y tamborcito que levantan el ánimo desde el primer trago.
+                    </p>
+                </article>
+
+                <!-- Slide 3: Bloque Azul Cobalto ("EL TRIP COMPLETO" / AGUACHILE) -->
+                <article class="bg-cobalto-500 text-papel-100 rounded-3xl border-3 border-carbon-900 shadow-flyer p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-bold text-papel-100/90 mb-4">
+                            <span>03 · BARRA &amp; BOTANA</span>
+                            <span>🍋</span>
+                        </div>
+                        <h3 class="font-display text-2xl uppercase leading-tight">
+                            EL TRIP COMPLETO
+                        </h3>
+                        <p class="text-sm text-papel-100/90 mt-3 leading-relaxed">
+                            Aguachiles bravos con totopos enchilados, aros de calamar crujientes, moritas y más es lo que encontrarás en nuestro menú. Ven y vive Baja Cruda.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-white/25 flex items-center justify-between text-[11px] font-extrabold uppercase">
+                        <span>Aguachiles &amp; Moritas</span>
+                        <span>100% Fresco</span>
+                    </div>
+                </article>
+
+                <!-- Slide 4: Bloque Rosa Pastel ("CHUPE TASTING" & HOUSE MUSIC) -->
+                <article class="bg-pastel-400 text-carbon-900 rounded-3xl border-3 border-carbon-900 shadow-flyer p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-extrabold text-chamoy-600 mb-4">
+                            <span>04 · BEATS &amp; DRINKS</span>
+                            <span>🪩</span>
+                        </div>
+                        <h3 class="font-display text-2xl uppercase leading-tight text-chamoy-600">
+                            HOUSE &amp; CHUPE TASTING
+                        </h3>
+                        <p class="text-sm text-carbon-900/90 font-medium mt-3 leading-relaxed">
+                            Nuevo menú de mixología, vinyl sessions, DJ sets de House y la esencia única que convierte una tarde de tacos en fiesta en Metepec.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-carbon-900/20 flex items-center justify-between text-[11px] font-extrabold uppercase text-carbon-900">
+                        <span>Tacos · Miches · House</span>
+                        <span>Metepec</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================================
+         4. SECCIÓN "MICHE A TU MANERA" 
+    ====================================================================== -->
+    <section id="arma-tu-miche" class="py-20 bg-bosque-900 bg-monograma-bosque border-b-4 border-carbon-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Encabezado -->
+            <div class="max-w-3xl mb-12">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-chamoy-500 text-papel-100 font-display font-extrabold text-xs uppercase tracking-widest border-2 border-carbon-900 mb-3">
+                    Experiencia Exclusiva en Barra
+                </span>
+                <h2 class="font-display font-extrabold text-4xl sm:text-6xl text-papel-100 uppercase leading-none">
+                    MICHE A <span class="text-lima-500">TU MANERA</span>
+                </h2>
+                <p class="text-sm sm:text-base text-papel-200/85 mt-3 leading-relaxed">
+                    El único lugar en Metepec donde creas tu Miche desde cero con diferentes opciones de escarchado de la casa. Así se prepara tu vaso en barra:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Columna Izquierda: 4 Pasos Visuales Editoriales -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    
+                    <!-- PASO 01 -->
+                    <article class="bg-bosque-800 p-6 rounded-3xl border-3 border-carbon-900 shadow-flyer-lima flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full bg-lima-500 text-carbon-900 font-display font-extrabold text-xs uppercase tracking-wider border border-carbon-900">
+                                    01
+                                </span>
+                                <span class="text-2xl">🍺</span>
+                            </div>
+                            <h3 class="font-display font-extrabold text-2xl text-papel-100 uppercase leading-tight">
+                                Elige tu Cheve
+                            </h3>
+                            <p class="text-xs sm:text-sm text-papel-200/85 mt-2 leading-relaxed">
+                                Selecciona tu cerveza bien fría para servir directo en vaso escarchado:
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/15 flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-lg bg-bosque-950 text-lima-400 text-[11px] font-bold uppercase">Corona</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-bosque-950 text-lima-400 text-[11px] font-bold uppercase">Victoria</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-bosque-950 text-lima-400 text-[11px] font-bold uppercase">XX Lager</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-bosque-950 text-lima-400 text-[11px] font-bold uppercase">Pacífico</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-bosque-950 text-lima-400 text-[11px] font-bold uppercase">Ultra</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-bosque-950 text-lima-400 text-[11px] font-bold uppercase">Modelo</span>
+                        </div>
+                    </article>
+
+                    <!-- PASO 02 -->
+                    <article class="bg-papel-100 text-carbon-900 p-6 rounded-3xl border-3 border-carbon-900 shadow-flyer-chamoy flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full bg-chamoy-500 text-papel-100 font-display font-extrabold text-xs uppercase tracking-wider border border-carbon-900">
+                                    02
+                                </span>
+                                <span class="text-2xl">🌶️</span>
+                            </div>
+                            <h3 class="font-display font-extrabold text-2xl text-carbon-900 uppercase leading-tight">
+                                Escarchado de la Casa
+                            </h3>
+                            <p class="text-xs sm:text-sm text-carbon-800/85 mt-2 leading-relaxed">
+                                Doble capa espesa preparada al momento con tus dulces favoritos:
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-carbon-900/15 flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-lg bg-chamoy-500 text-papel-100 text-[11px] font-bold uppercase">Skwinkle</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-chamoy-500 text-papel-100 text-[11px] font-bold uppercase">Picafresa</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-chamoy-500 text-papel-100 text-[11px] font-bold uppercase">Tamborcito</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-carbon-900 text-papel-100 text-[11px] font-bold uppercase">Miguelito</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-carbon-900 text-papel-100 text-[11px] font-bold uppercase">Pelón Pelo Rico</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-carbon-900 text-papel-100 text-[11px] font-bold uppercase">Tamarindo Enchilado</span>
+                        </div>
+                    </article>
+
+                    <!-- PASO 03 -->
+                    <article class="bg-cobalto-500 text-papel-100 p-6 rounded-3xl border-3 border-carbon-900 shadow-flyer flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full bg-papel-100 text-carbon-900 font-display font-extrabold text-xs uppercase tracking-wider border border-carbon-900">
+                                    03
+                                </span>
+                                <span class="text-2xl">🍋</span>
+                            </div>
+                            <h3 class="font-display font-extrabold text-2xl text-papel-100 uppercase leading-tight">
+                                Base &amp; Salsas
+                            </h3>
+                            <p class="text-xs sm:text-sm text-papel-100/90 mt-2 leading-relaxed">
+                                Clamato preparado de la casa, limón recién exprimido y salsas negras con el balance exacto para curar cualquier cruda.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/25 text-[11px] font-bold uppercase tracking-wider">
+                            Clamato Baja · Limón Fresco · Salsas Negras
+                        </div>
+                    </article>
+
+                    <!-- PASO 04 -->
+                    <article class="bg-pastel-400 text-carbon-900 p-6 rounded-3xl border-3 border-carbon-900 shadow-flyer flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full bg-bosque-800 text-lima-500 font-display font-extrabold text-xs uppercase tracking-wider border border-carbon-900">
+                                    04
+                                </span>
+                                <span class="text-2xl">🍬</span>
+                            </div>
+                            <h3 class="font-display font-extrabold text-2xl text-chamoy-600 uppercase leading-tight">
+                                Toppings &amp; Gomitas
+                            </h3>
+                            <p class="text-xs sm:text-sm text-carbon-900/90 font-medium mt-2 leading-relaxed">
+                                Banderilla de tamarindo, gomitas enchiladas y el toque final de la casa para coronar tu vaso.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-carbon-900/20 text-[11px] font-bold uppercase tracking-wider text-carbon-900">
+                            Banderilla Tamarindo · Gomitas · Toque Final
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Columna Derecha: Ilustración SVG del Vaso Escarchado -->
+                <div class="lg:col-span-5">
+                    <div class="bg-papel-100 text-carbon-900 rounded-3xl border-4 border-carbon-900 shadow-flyer-lima p-6 sm:p-8 relative overflow-hidden">
+                        <div class="flex items-center justify-between border-b-2 border-carbon-900/15 pb-3 mb-4">
+                            <span class="font-display font-extrabold text-xs uppercase tracking-wider text-bosque-800">La Firma de la Barra</span>
+                            <span class="px-2.5 py-0.5 rounded bg-bosque-800 text-lima-500 font-display font-extrabold text-[11px] uppercase">Armada al Momento</span>
+                        </div>
+
+                        <!-- Ilustración Vectorial del Vaso Escarchado -->
+                        <div class="relative mx-auto w-56 h-64 flex items-center justify-center my-2">
+                            <svg viewBox="0 0 220 240" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Destellos gráficos -->
+                                <path d="M36 44L40 54L50 58L40 62L36 72L32 62L22 58L32 54L36 44Z" fill="#49D658" stroke="#111111" stroke-width="2"/>
+                                <path d="M186 112L189 119L196 122L189 125L186 132L183 125L176 122L183 119L186 112Z" fill="#C91F28" stroke="#111111" stroke-width="2"/>
+
+                                <!-- Popote verde lima -->
+                                <line x1="138" y1="18" x2="115" y2="118" stroke="#49D658" stroke-width="8" stroke-linecap="round"/>
+                                <line x1="138" y1="18" x2="115" y2="118" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+                                
+                                <!-- Banderilla de tamarindo -->
+                                <line x1="46" y1="38" x2="158" y2="68" stroke="#78350F" stroke-width="5.5" stroke-linecap="round"/>
+                                <rect x="68" y="40" width="50" height="11" rx="5.5" transform="rotate(15 68 40)" fill="#991B1B" stroke="#111111" stroke-width="2.5"/>
+
+                                <!-- Rodaja de limón / gomita en el borde -->
+                                <path d="M148 56C159 41 180 46 182 63C173 72 156 69 148 56Z" fill="#49D658" stroke="#111111" stroke-width="3"/>
+                                <path d="M158 56C163 52 169 53 172 58" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+
+                                <!-- Vaso con Clamato Preparado -->
+                                <path d="M68 72H152L141 214H79L68 72Z" fill="#C91F28" stroke="#111111" stroke-width="4.5" stroke-linejoin="round"/>
+
+                                <!-- Espuma fresca de cerveza -->
+                                <path d="M69 72H151L150 85H70L69 72Z" fill="#FEF3C7" fill-opacity="0.92"/>
+
+                                <!-- Cubos de hielo -->
+                                <rect x="86" y="102" width="19" height="19" rx="3" fill="#FFFFFF" fill-opacity="0.35" transform="rotate(14 86 102)"/>
+                                <rect x="114" y="120" width="19" height="19" rx="3" fill="#FFFFFF" fill-opacity="0.35" transform="rotate(-12 114 120)"/>
+                                <rect x="92" y="152" width="19" height="19" rx="3" fill="#FFFFFF" fill-opacity="0.35" transform="rotate(8 92 152)"/>
+
+                                <!-- Escarchado espeso de Skwinkle & Picafresa -->
+                                <path d="M62 66H158V83C150 91 142 80 134 89C126 98 118 81 110 90C102 99 94 81 86 90C78 99 70 83 62 87V66Z" fill="#7F1D1D" stroke="#111111" stroke-width="3.5" stroke-linejoin="round"/>
+
+                                <!-- Etiqueta BAJA en el vaso -->
+                                <rect x="82" y="134" width="56" height="24" rx="5" fill="#133B1F" stroke="#111111" stroke-width="2"/>
+                                <text x="110" y="150" text-anchor="middle" fill="#F4F1EA" font-family="'Syne', sans-serif" font-weight="800" font-size="12">BAJA</text>
+                            </svg>
+                        </div>
+
+                        <div class="bg-bosque-900 text-papel-100 rounded-2xl p-4 border-2 border-carbon-900 text-center space-y-1">
+                            <p class="font-hand text-2xl text-lima-500 font-bold">
+                                “Pídela directo en nuestra barra de Metepec”
+                            </p>
+                            <p class="text-xs text-papel-200/85">
+                                Combina tu cheve favorita con escarchados de Skwinkle, Picafresa o Tamborcito.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         5. MENÚ VISUAL: "DE LA MICHE AL TACO & EL TRIP COMPLETO"
+    ====================================================================== -->
+    <section id="menu" class="py-20 bg-monograma-papel text-carbon-900 border-b-4 border-carbon-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Encabezado del Menú + Banner Viernes 3x2 en Moritas -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+                <div>
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-bosque-800 text-lima-500 font-display font-extrabold text-xs uppercase tracking-widest mb-2">
+                        Carta Oficial · Metepec
+                    </span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-carbon-900 uppercase leading-none">
+                        DE LA MICHE <span class="text-bosque-800">AL TACO</span> &amp; EL TRIP COMPLETO
+                    </h2>
+                    <p class="text-sm sm:text-base font-medium text-carbon-800/80 mt-2 max-w-2xl">
+                        Tacos de camarón y pescado capeado con sazón de Ensenada, barra fría de aguachiles, aros de calamar, micheladas y moritas.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Bloque Editorial Destacado en Azul Cobalto (#1B4FD8) para AGUACHILES -->
+            <div class="mb-10 bg-cobalto-500 text-papel-100 rounded-3xl border-4 border-carbon-900 shadow-flyer p-6 sm:p-8 relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    <div class="lg:col-span-8 space-y-2">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-carbon-900 text-papel-100 font-display font-extrabold text-[11px] uppercase tracking-widest">
+                            <span>Especialidad de Barra Fría</span>
+                            <span>🦐</span>
+                        </div>
+                        <h3 class="font-poster text-5xl sm:text-7xl uppercase tracking-tight leading-none text-papel-100">
+                            AGUACHILES
+                        </h3>
+                        <p class="text-sm sm:text-base text-papel-100/90 max-w-2xl font-medium">
+                            Camarón curtido al momento en limón fresco, salsas tatemadas de la Baja, pepino, cebolla morada y rodeado de totopos enchilados listos para acompañar tu miche.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-4 flex lg:justify-end">
+                        <button onclick="filterMenu('Barra Fría & Aguachiles')" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-papel-100 hover:bg-lima-500 text-carbon-900 font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider border-3 border-carbon-900 shadow-flyer transition-colors">
+                            Ver Barra Fría &amp; Aguachiles
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtros por Categoría -->
+            <div class="flex flex-wrap gap-2.5 mb-10" id="menu-tabs">
+                <button onclick="filterMenu('Todos')" data-cat="Todos" class="menu-tab px-4 py-2.5 rounded-xl font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider bg-bosque-800 text-lima-500 border-2 border-carbon-900 shadow-flyer transition-all">
+                    🔥 Todos
+                </button>
+                <button onclick="filterMenu('Tacos Baja')" data-cat="Tacos Baja" class="menu-tab px-4 py-2.5 rounded-xl font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider bg-papel-100 text-carbon-900 border-2 border-carbon-900 hover:bg-lima-500 transition-all">
+                    🌮 Tacos Baja
+                </button>
+                <button onclick="filterMenu('Barra Fría & Aguachiles')" data-cat="Barra Fría & Aguachiles" class="menu-tab px-4 py-2.5 rounded-xl font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider bg-papel-100 text-carbon-900 border-2 border-carbon-900 hover:bg-lima-500 transition-all">
+                    🦐 Barra Fría &amp; Aguachiles
+                </button>
+                <button onclick="filterMenu('Micheladas & Moritas')" data-cat="Micheladas & Moritas" class="menu-tab px-4 py-2.5 rounded-xl font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider bg-papel-100 text-carbon-900 border-2 border-carbon-900 hover:bg-lima-500 transition-all">
+                    🍹 Micheladas &amp; Moritas
+                </button>
+                <button onclick="filterMenu('Pa\' Picar')" data-cat="Pa' Picar" class="menu-tab px-4 py-2.5 rounded-xl font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider bg-papel-100 text-carbon-900 border-2 border-carbon-900 hover:bg-lima-500 transition-all">
+                    🦑 Pa' Picar
+                </button>
+            </div>
+
+            <!-- Grid de Platillos Visuales (Informativo, sin carrito ni botón agregar) -->
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Renderizado dinámico mediante JavaScript -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================================
+         6. SECCIÓN "HOUSE & VINYL SESSIONS" (FLYERS REALES DE EVENTOS)
+    ====================================================================== -->
+    <section id="sessions" class="py-20 bg-bosque-950 text-papel-100 border-b-4 border-carbon-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div>
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-pastel-400 text-carbon-900 font-display text-xs uppercase tracking-widest mb-3">
+                        Música · DJ Sets · Afterparty
+                    </span>
+                    <h2 class="font-display text-4xl sm:text-6xl text-papel-100 uppercase leading-none">
+                        HOUSE &amp; <span class="text-lima-500">VINYL SESSIONS</span>
+                    </h2>
+                </div>
+                <a href="https://www.instagram.com/bajacruda" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-papel-100 text-carbon-900 font-display text-xs sm:text-sm uppercase tracking-wider border-2 border-carbon-900 shadow-flyer-lima hover:bg-lima-500 transition-colors self-start">
+                    <i data-lucide="instagram" class="w-4 h-4"></i>
+                    <span>Ver en @bajacruda</span>
+                </a>
+            </div>
+
+            <!-- 3 Flyers Inspirados Directamente en sus Publicaciones de IG -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Flyer 1: VINYL SESSIONS (Inspirado en su poster rojo/vinilo) -->
+                <article class="bg-chamoy-500 text-papel-100 rounded-3xl border-4 border-carbon-900 shadow-flyer-white p-6 flex flex-col justify-between relative overflow-hidden">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-extrabold uppercase tracking-widest mb-4">
+                            <span>BAJA CRUDA PRESENTS</span>
+                            <span>11:00 AM – 7:30 PM</span>
+                        </div>
+                        <h3 class="font-display text-4xl uppercase leading-none tracking-tight">
+                            VINYL<br>SESSIONS
+                        </h3>
+                        <p class="text-xs font-bold uppercase tracking-widest mt-2 text-papel-100/90">
+                            HOUSE MUSIC · VINYL ONLY · METEPEC
+                        </p>
+
+                        <!-- Disco de Vinilo Giratorio SVG -->
+                        <div class="my-6 flex justify-center">
+                            <div class="vinyl-spin w-36 h-36 rounded-full bg-carbon-900 border-4 border-papel-100 flex items-center justify-center shadow-xl">
+                                <div class="w-24 h-24 rounded-full border border-white/15 flex items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-lima-500 border-2 border-carbon-900 flex items-center justify-center">
+                                        <div class="w-3 h-3 rounded-full bg-carbon-900"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-white/25 flex items-center justify-between text-xs font-extrabold uppercase">
+                        <span>Tacos &amp; Miches en vivo</span>
+                        <span>Entrada Libre</span>
+                    </div>
+                </article>
+
+                <!-- Flyer 2: CHUPE TASTING (Inspirado en su poster Rosa Pastel) -->
+                <article class="bg-pastel-400 text-chamoy-600 rounded-3xl border-4 border-carbon-900 shadow-flyer-lima p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-extrabold uppercase tracking-widest text-carbon-900 mb-4">
+                            <span>BAJA CRUDA BAR</span>
+                            <span>NUEVA MIXOLOGÍA</span>
+                        </div>
+
+                        <!-- Ilustración minimalista de copas estilo su poster rosa -->
+                        <div class="my-4 flex justify-center">
+                            <svg viewBox="0 0 120 110" class="w-28 h-28" fill="none">
+                                <!-- Copa Martini -->
+                                <path d="M22 36H62L42 62L22 36Z" stroke="#C91F28" stroke-width="3" stroke-linejoin="round"/>
+                                <line x1="42" y1="62" x2="42" y2="92" stroke="#C91F28" stroke-width="3"/>
+                                <line x1="28" y1="92" x2="56" y2="92" stroke="#C91F28" stroke-width="3" stroke-linecap="round"/>
+                                <!-- Vaso alto con popote -->
+                                <rect x="66" y="26" width="30" height="66" stroke="#C91F28" stroke-width="3"/>
+                                <line x1="88" y1="12" x2="78" y2="54" stroke="#C91F28" stroke-width="3" stroke-linecap="round"/>
+                                <rect x="72" y="68" width="10" height="10" stroke="#C91F28" stroke-width="2"/>
+                            </svg>
+                        </div>
+
+                        <h3 class="font-display text-4xl uppercase leading-none text-center">
+                            CHUPE<br>TASTING
+                        </h3>
+                        <p class="text-xs font-bold text-carbon-900 text-center mt-3 leading-relaxed">
+                            Sé parte de nuestra prueba de menú de mixología: nuevos sabores, nuevos drinks y la misma esencia en Baja Cruda.
+                        </p>
+                    </div>
+
+                    <div class="mt-6 pt-3 border-t border-chamoy-600/25 text-center text-[11px] font-extrabold uppercase text-carbon-900">
+                        Paseo San Isidro 379 · Metepec
+                    </div>
+                </article>
+
+                <!-- Flyer 3: WATCH PARTY & AFTERPARTY (Inspirado en su poster verde GP / Eventos) -->
+                <article class="bg-bosque-800 text-papel-100 rounded-3xl border-4 border-carbon-900 shadow-flyer-chamoy p-6 flex flex-col justify-between bg-monograma-bosque">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-extrabold uppercase tracking-widest text-lima-500 mb-4">
+                            <span>DOMINGOS &amp; SPECIALS</span>
+                            <span>12 PM – 12 AM</span>
+                        </div>
+                        <h3 class="font-display text-3xl sm:text-4xl uppercase leading-none">
+                            PANTALLAS,<br><span class="text-lima-500">LITROS</span> &amp;<br>AFTERPARTY
+                        </h3>
+                        <p class="text-sm text-papel-200/90 mt-4 leading-relaxed">
+                            Vive los grandes premios, partidos y tardes de domingo con pantallas, litros bien fríos, tacos Baja recién capeados y afterparty con DJ de House hasta la medianoche.
+                        </p>
+                    </div>
+
+                    <div class="mt-6">
+                        <a href="https://www.instagram.com/bajacruda" target="_blank" rel="noopener noreferrer" class="block w-full py-3 rounded-xl bg-lima-500 hover:bg-lima-400 text-carbon-900 font-display font-extrabold text-xs uppercase tracking-wider text-center border-2 border-carbon-900 transition-colors">
+                            Checar Cartelera en @bajacruda
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         7. UBICACIÓN EN METEPEC, HORARIOS Y RESERVACIÓN DIRECTA
+    ====================================================================== -->
+    <section id="ubicacion" class="py-20 bg-bosque-900 text-papel-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- Columna Izquierda: Info Real Metepec -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-lima-500 text-carbon-900 font-display text-xs uppercase tracking-widest">
+                        Metepec 📍
+                    </span>
+                    <h2 class="font-display text-4xl sm:text-5xl text-papel-100 uppercase leading-none">
+                        VENTE A <span class="text-lima-500">BAJA CRUDA</span>
+                    </h2>
+
+                    <div class="p-6 rounded-3xl bg-bosque-800 border-2 border-white/15 space-y-5">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-lima-500 text-carbon-900 flex items-center justify-center shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-lg uppercase">Dirección Oficial</h3>
+                                <p class="text-sm text-papel-200/90 mt-1">
+                                    Paseo San Isidro 379, Barrio de Santa Cruz,<br>
+                                    C.P. 52140, Metepec, Estado de México.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5 pt-4 border-t border-white/10">
+                            <div class="w-10 h-10 rounded-xl bg-chamoy-500 text-white flex items-center justify-center shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div class="w-full">
+                                <h3 class="font-display text-lg uppercase">Horarios</h3>
+                                <ul class="text-sm text-papel-200/85 mt-1.5 space-y-1">
+                                    <li class="flex justify-between"><span>Lunes a Miércoles:</span> <strong class="text-white">12:30 PM – 10:00 PM</strong></li>
+                                    <li class="flex justify-between"><span>Jueves a Sábado:</span> <strong class="text-lima-400">12:30 PM – 12:00 AM</strong></li>
+                                    <li class="flex justify-between"><span>Domingos de Cruda:</span> <strong class="text-pastel-400">12:00 PM – 9:30 PM</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Botones Directos a Google Maps & Instagram -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <a href="https://maps.app.goo.gl/pZ9LMceAVo17L8679" target="_blank" rel="noopener noreferrer" class="py-3.5 px-4 rounded-xl bg-lima-500 hover:bg-lima-400 text-carbon-900 font-display text-xs uppercase tracking-wider text-center border-2 border-carbon-900 shadow-flyer flex items-center justify-center gap-2 transition-all">
+                                <i data-lucide="navigation" class="w-4 h-4"></i>
+                                <span>Abrir Google Maps</span>
+                            </a>
+                            <a href="https://www.instagram.com/bajacruda" target="_blank" rel="noopener noreferrer" class="py-3.5 px-4 rounded-xl bg-papel-100 hover:bg-papel-200 text-carbon-900 font-display text-xs uppercase tracking-wider text-center border-2 border-carbon-900 shadow-flyer flex items-center justify-center gap-2 transition-all">
+                                <i data-lucide="instagram" class="w-4 h-4"></i>
+                                <span>@bajacruda</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Formulario de Reservación de Mesa -->
+                <div class="lg:col-span-6">
+                    <div class="bg-papel-100 text-carbon-900 p-6 sm:p-8 rounded-3xl border-4 border-carbon-900 shadow-flyer-chamoy space-y-5">
+                        <div class="flex items-center justify-between border-b-2 border-carbon-900/15 pb-3">
+                            <span class="font-display font-extrabold text-xs uppercase tracking-wider text-bosque-800">Paseo San Isidro · Metepec</span>
+                            <span class="px-3 py-1 rounded-full bg-bosque-800 text-lima-500 font-display font-extrabold text-xs uppercase">Spot Oficial</span>
+                        </div>
+
+                        <!-- Postal Gráfica del Spot -->
+                        <div class="relative rounded-2xl overflow-hidden border-3 border-carbon-900 bg-bosque-800 h-64 flex flex-col items-center justify-center p-6 text-center bg-monograma-bosque">
+                            <div class="w-16 h-16 rounded-full bg-lima-500 text-carbon-900 border-3 border-carbon-900 shadow-flyer flex items-center justify-center mb-3">
+                                <i data-lucide="map-pin" class="w-8 h-8 stroke-[2.5]"></i>
+                            </div>
+                            <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-papel-100 uppercase">BAJA CRUDA METEPEC</h3>
+                            <p class="text-xs font-bold text-lima-400 uppercase tracking-widest mt-1">
+                                Paseo San Isidro 379 · Metepec, Edo. Méx.
+                            </p>
+                            <a href="https://maps.app.goo.gl/pZ9LMceAVo17L8679" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-papel-100 hover:bg-lima-500 text-carbon-900 font-display font-extrabold text-xs uppercase tracking-wider border-2 border-carbon-900 shadow-flyer transition-colors">
+                                <span>Cómo llegar ahora</span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-3 text-center">
+                            <div class="p-3 rounded-2xl bg-papel-200 border-2 border-carbon-900">
+                                <span class="block text-xl">🦐</span>
+                                <span class="block font-display font-extrabold text-xs uppercase mt-1">Tacos Baja</span>
+                            </div>
+                            <div class="p-3 rounded-2xl bg-papel-200 border-2 border-carbon-900">
+                                <span class="block text-xl">🍋</span>
+                                <span class="block font-display font-extrabold text-xs uppercase mt-1">Miches</span>
+                            </div>
+                            <div class="p-3 rounded-2xl bg-papel-200 border-2 border-carbon-900">
+                                <span class="block text-xl">🪩</span>
+                                <span class="block font-display font-extrabold text-xs uppercase mt-1">House</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         FOOTER VERDE BOSQUE PROFUNDO
+    ====================================================================== -->
+    <footer class="bg-bosque-950 text-papel-200/75 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <span class="font-display text-2xl text-papel-100 tracking-tight">BAJA <span class="text-lima-500 font-sans font-bold text-sm tracking-[0.25em]">CRUDA</span></span>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-bosque-800 border border-white/15 text-lima-400 font-bold">Metepec 📍</span>
+            </div>
+            <p class="text-xs text-center">
+                MICHES, TACOS Y HOUSE 🦐🍋🪩 · Paseo San Isidro 379, Metepec, Edo. Méx.
+            </p>
+            <div class="flex items-center gap-5 text-xs font-bold uppercase">
+                <a href="#arma-tu-miche" class="hover:text-lima-500">Miche a tu Manera</a>
+                <a href="#menu" class="hover:text-lima-500">Menú</a>
+                <a href="https://www.instagram.com/bajacruda" target="_blank" rel="noopener noreferrer" class="text-lima-500 hover:underline">@bajacruda</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         DRAWER LATERAL: CARRITO DE PEDIDO WHATSAPP
+    ====================================================================== -->
+    <div id="cart-backdrop" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-black/75 backdrop-blur-xs z-50 hidden"></div>
+    <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-bosque-900 border-l-4 border-carbon-900 z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        
+        <div class="p-5 bg-bosque-950 border-b border-white/15 flex items-center justify-between">
+            <div>
+                <span class="text-[11px] font-extrabold uppercase tracking-widest text-lima-500">Baja Cruda · Metepec</span>
+                <h3 class="font-display text-2xl text-papel-100 uppercase">TU ORDEN</h3>
+            </div>
+            <button onclick="toggleCartDrawer(false)" aria-label="Cerrar orden" class="p-2 rounded-xl bg-bosque-800 hover:bg-chamoy-500 text-white transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-3">
+            <!-- Renderizado dinámico -->
+        </div>
+
+        <div class="p-5 bg-bosque-950 border-t border-white/15 space-y-4">
+            <div class="flex items-center justify-between">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-papel-200/70">Total Estimado:</span>
+                <span id="cart-total" class="font-display text-3xl text-lima-500">$0 MXN</span>
+            </div>
+
+            <div>
+                <label for="order-mode" class="block text-[11px] font-extrabold uppercase tracking-wider text-papel-200/70 mb-1">¿Cómo lo quieres?</label>
+                <select id="order-mode" class="w-full px-3.5 py-2.5 rounded-xl bg-bosque-800 border border-white/20 text-xs font-bold text-white outline-none">
+                    <option value="En Mesa (Baja Cruda Metepec)">🪩 En Mesa (Paseo San Isidro 379)</option>
+                    <option value="Pick-Up (Paso a recoger)">🛍️ Pick-Up (Paso a recoger listo)</option>
+                </select>
+            </div>
+
+            <button onclick="sendOrderWhatsApp()" class="w-full py-4 rounded-2xl bg-lima-500 hover:bg-lima-400 text-carbon-900 font-display text-base uppercase tracking-wider border-2 border-carbon-900 shadow-flyer transition-all flex items-center justify-center gap-2">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>Pedir por WhatsApp</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- =====================================================================
+         JAVASCRIPT: Datos del Menú Visual de Baja Cruda Metepec.
+    ====================================================================== -->
+    <script>
+        
+        const menuItems = [
+            {
+                id: "taco-baja-camaron",
+                name: "Taco Baja de Camarón Capeado",
+                category: "Tacos Baja",
+                price: 75,
+                tag: "El Clásico",
+                badgeBg: "bg-bosque-800 text-lima-500",
+                visualBg: "bg-bosque-900",
+                emoji: "🦐🌮",
+                description: "Camarón en capeado crujiente estilo Ensenada sobre tortilla calientita, col morada, pico de gallo y aderezo chipotle de la casa."
+            },
+            {
+                id: "taco-baja-pescado",
+                name: "Taco Baja de Pescado Ensenada",
+                category: "Tacos Baja",
+                price: 70,
+                tag: "Sazón Baja",
+                badgeBg: "bg-bosque-800 text-lima-500",
+                visualBg: "bg-bosque-800",
+                emoji: "🐟🌮",
+                description: "Filete de pescado capeado al momento, repollo morado fresco, cebolla curtida y nuestro aderezo especial Baja Cruda."
+            },
+            {
+                id: "orden-tacos-trip",
+                name: "Orden 3 Tacos Baja (Mixtos)",
+                category: "Tacos Baja",
+                price: 195,
+                tag: "Para Compartir",
+                badgeBg: "bg-chamoy-500 text-papel-100",
+                visualBg: "bg-bosque-950",
+                emoji: "🔥🌮",
+                description: "Elige 3 tacos de camarón o pescado capeado servidos en bandeja metálica con papel monograma Baja y salsas."
+            },
+            {
+                id: "aguachile-negro",
+                name: "Aguachile Negro de la Baja",
+                category: "Barra Fría & Aguachiles",
+                price: 215,
+                tag: "Con Totopos",
+                badgeBg: "bg-cobalto-500 text-papel-100",
+                visualBg: "bg-cobalto-600",
+                emoji: "🖤🦐",
+                description: "Camarón curtido en limón y salsa negra tatemada, cebolla morada, pepino, aguacate y borde de totopos enchilados."
+            },
+            {
+                id: "aguachile-verde",
+                name: "Aguachile Verde Serrano",
+                category: "Barra Fría & Aguachiles",
+                price: 205,
+                tag: "Fresco & Bravo",
+                badgeBg: "bg-bosque-800 text-lima-500",
+                visualBg: "bg-bosque-800",
+                emoji: "🍋🦐",
+                description: "Salsa verde fresca de chile serrano y cilantro con camarón curtido, pepino y totopos crujientes."
+            },
+            {
+                id: "ceviche-baja",
+                name: "Ceviche Baja Cruda",
+                category: "Barra Fría & Aguachiles",
+                price: 190,
+                tag: "Barra Fría",
+                badgeBg: "bg-cobalto-500 text-papel-100",
+                visualBg: "bg-cobalto-500",
+                emoji: "🧊🐟",
+                description: "Pesca fresca marinada en cítricos con pepino, cebolla morada, cilantro y el toque secreto de la casa."
+            },
+            {
+                id: "miche-a-tu-manera-item",
+                name: "Miche a tu Manera (1 Litro)",
+                category: "Micheladas & Moritas",
+                price: 115,
+                tag: "La Firma",
+                badgeBg: "bg-chamoy-500 text-papel-100",
+                visualBg: "bg-chamoy-600",
+                emoji: "🍺🌶️",
+                description: "Elige tu cerveza favorita y personaliza tu escarchado con Skwinkle, Picafresa, Tamborcito, Miguelito o Pelón Pelo Rico."
+            },
+            {
+                id: "morita-house",
+                name: "Morita Especial Baja Cruda",
+                category: "Micheladas & Moritas",
+                price: 125,
+                tag: "Viernes 3x2",
+                badgeBg: "bg-chamoy-500 text-papel-100",
+                visualBg: "bg-bosque-900",
+                emoji: "🍇🍹",
+                description: "Nuestro drink insignia de frutos rojos y mora con escarchado de la casa. ¡Aprovecha Viernes 3x2 en Moritas!"
+            },
+            {
+                id: "chupe-tasting",
+                name: "Flight Chupe Tasting (3 Mini Drinks)",
+                category: "Micheladas & Moritas",
+                price: 199,
+                tag: "Mixología",
+                badgeBg: "bg-pastel-400 text-carbon-900",
+                visualBg: "bg-pastel-500",
+                emoji: "🍸🪩",
+                description: "Degustación de 3 creaciones de nuestra nueva barra de mixología Baja Cruda para probar sabores nuevos."
+            },
+            {
+                id: "aros-calamar",
+                name: "Aros de Calamar Crujientes",
+                category: "Pa' Picar",
+                price: 175,
+                tag: "El Trip Completo",
+                badgeBg: "bg-bosque-800 text-lima-500",
+                visualBg: "bg-bosque-900",
+                emoji: "🦑🍋",
+                description: "Aros de calamar dorados y crujientes acompañados de aderezo chipotle y limón para acompañar tu miche."
+            },
+            {
+                id: "papas-baja",
+                name: "Papas Baja con Aderezo",
+                category: "Pa' Picar",
+                price: 135,
+                tag: "Pa' la House Session",
+                badgeBg: "bg-bosque-800 text-lima-500",
+                visualBg: "bg-bosque-800",
+                emoji: "🍟🔥",
+                description: "Papas sazonadas al momento con especias de la casa y aderezo cremoso ligeramente picante."
+            }
+        ];
+
+        let currentMenuCat = "Todos";
+
+        // Alternar menú de navegación en móvil
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            if (mobileNav) {
+                mobileNav.classList.toggle('hidden');
+            }
+        }
+
+        // Renderizar tarjetas informativas del menú sin botones de compra
+        function renderMenu() {
+            const grid = document.getElementById('menu-grid');
+            if (!grid) return;
+
+            const filtered = currentMenuCat === "Todos"
+                ? menuItems
+                : menuItems.filter(item => item.category === currentMenuCat);
+
+            grid.innerHTML = filtered.map(item => `
+                <article class="bg-papel-100 text-carbon-900 rounded-3xl border-3 border-carbon-900 shadow-flyer overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <!-- Cabecera Gráfica con Monograma BAJA -->
+                        <div class="${item.visualBg} bg-monograma-bosque h-40 p-5 flex flex-col justify-between border-b-3 border-carbon-900 relative">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-2.5 py-1 rounded-lg ${item.badgeBg} font-display font-extrabold text-[10px] uppercase tracking-wider border border-carbon-900">
+                                    ${item.tag}
+                                </span>
+                                <span class="px-2.5 py-1 rounded-lg bg-papel-100 text-carbon-900 text-[10px] font-bold uppercase border border-carbon-900">
+                                    ${item.category}
+                                </span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <span class="text-4xl drop-shadow-md">${item.emoji}</span>
+                                <span class="font-display font-extrabold text-[11px] uppercase tracking-widest text-papel-100/80">BAJA CRUDA</span>
+                            </div>
+                        </div>
+
+                        <!-- Nombre y Descripción -->
+                        <div class="p-6 pb-4">
+                            <h3 class="font-display font-extrabold text-2xl text-carbon-900 uppercase leading-tight">${item.name}</h3>
+                            <p class="text-sm text-carbon-800/80 mt-2.5 leading-relaxed">${item.description}</p>
+                        </div>
+                    </div>
+
+                    <!-- Pie de Tarjeta con Precio en Carta -->
+                    <div class="px-6 pb-6 pt-3 border-t-2 border-carbon-900/10 flex items-center justify-between">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-bosque-700">Precio en Carta</span>
+                        <span class="font-display font-extrabold text-2xl text-bosque-800">$${item.price} <span class="text-xs font-sans font-bold text-carbon-800/60">MXN</span></span>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Filtrar categorías del menú
+        function filterMenu(cat) {
+            currentMenuCat = cat;
+            document.querySelectorAll('.menu-tab').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = "menu-tab px-4 py-2.5 rounded-xl font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider bg-bosque-800 text-lima-500 border-2 border-carbon-900 shadow-flyer transition-all";
+                } else {
+                    btn.className = "menu-tab px-4 py-2.5 rounded-xl font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider bg-papel-100 text-carbon-900 border-2 border-carbon-900 hover:bg-lima-500 transition-all";
+                }
+            });
+            renderMenu();
+        }
+
+        // Inicialización segura al cargar el DOM
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+            renderMenu();
+        });
+    </script>
+
+
+
+</body>
+</html>
